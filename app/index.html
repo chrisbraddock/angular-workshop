@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Workshop</title>
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/vendor/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body ng-app="EL">
+    <div ng-controller="TestController">
+        <h2>{{ model.test }}</h2>
+        <input ng-model="model.test" />
+    </div>
+
+    <!-- Vendor Scripts -->
+    <script src="js/vendor/angular.js"></script>
+    <script src="js/vendor/angular-route.js"></script>
+
+    <!-- Project Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers/test.js"></script>
+
+</body>
+</html>

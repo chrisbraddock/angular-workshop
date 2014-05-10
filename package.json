@@ -1,0 +1,22 @@
+{
+  "name": "angular-workshop",
+  "version": "0.0.1",
+  "description": "Let's start working with Angular!",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amwmedia/angular-workshop.git"
+  },
+  "author": "Andrew Worcester <andrew@amwmedia.com> (http://blog.amwmedia.com/)",
+  "bugs": {
+    "url": "https://github.com/amwmedia/angular-workshop/issues"
+  },
+  "homepage": "https://github.com/amwmedia/angular-workshop",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "load-grunt-tasks": "~0.4.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-connect": "~0.7.1",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-clear": "~0.2.1"
+  }
+}
