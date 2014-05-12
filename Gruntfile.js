@@ -20,6 +20,20 @@ module.exports = function (grunt) {
             dev: '<%= ng.temp %>'
         },
 
+        // process compass
+        compass: {
+            options: {
+                sassDir: '<%= ng.app %>/scss',
+                cssDir: '<%= ng.app %>/css',
+                noLineComments: false
+            },
+            dev: {
+                options: {
+                    debugInfo: true
+                }
+            }
+        },
+
         // start static web server
         connect: {
             options: {
@@ -48,8 +62,16 @@ module.exports = function (grunt) {
             // reload the browser when changes are made
             livereload: {
                 files: [
-                    '<%= ng.app %>/**/*'
+                    '<%= ng.app %>/**/*.html',
+                    '<%= ng.app %>/**/*.css',
+                    '<%= ng.app %>/**/*.js'
                 ]
+            },
+
+            // compile CSS when Sass files are changed
+            compass: {
+                files: ['<%= ng.app %>/**/*.{scss,sass}'],
+                tasks: ['compass:dev']
             }
         }
     });
@@ -61,7 +83,7 @@ module.exports = function (grunt) {
             'clear',
             'clean:dev',
             'connect:dev',
-            'watch:livereload'
+            'watch'
         ]);
     });
 };

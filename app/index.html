@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Angular Workshop</title>
+    <link rel="stylesheet" href="css/vendor/normalize.css">
     <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="css/vendor/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body ng-app="EL">
-    <div ng-controller="TestController">
-        <h2>{{ model.test }}</h2>
-        <input ng-model="model.test" />
+
+    <div class="new-item" ng-controller="NewItemController">
+        <h2>Add New Item</h2>
+        <input ng-model="model.newItemName" enter-pressed="action.addNewItem()" />
+    </div>
+
+    <div class="item-list" ng-controller="ItemListController">
+        <ul>
+            <li ng-repeat="item in model.itemList">{{ item }}</li>
+        </ul>
     </div>
 
     <!-- Vendor Scripts -->
@@ -19,7 +27,10 @@
 
     <!-- Project Scripts -->
     <script src="js/app.js"></script>
-    <script src="js/controllers/test.js"></script>
+
+    <script src="js/directives/enterPressed.js"></script>
+    <script src="js/controllers/newItem.js"></script>
+    <script src="js/controllers/itemList.js"></script>
 
 </body>
 </html>
