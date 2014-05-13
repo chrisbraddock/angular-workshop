@@ -1,0 +1,17 @@
+[{
+    "task": "Learn something about Angular",
+    "done": true,
+    "tags": ["javascript", "angular"]
+}, {
+    "task": "Learn what scope does",
+    "done": true,
+    "tags": ["javascript", "angular"]
+}, {
+    "task": "Learn about $emit and $on",
+    "done": true,
+    "tags": ["javascript", "angular", "pubsub"]
+}, {
+    "task": "Wire up todo list to an external file",
+    "done": false,
+    "tags": ["javascript", "angular", "ajax", "factory"]
+}]
