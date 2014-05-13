@@ -1,12 +1,10 @@
+lightAccentColor = #CCDDEF;
+darkTextColor = #555555;
+
 html, body {
     padding: 0;
     margin: 0;
-    height: 100%;
-    width: 100%;
-
-    &>div {
-        display: inline-block;
-    }
+    color: darkTextColor;
 }
 
 * {
@@ -14,23 +12,20 @@ html, body {
 }
 
 .new-item {
-    width: 100%;
-    background-color: #EEE;
+    background-color: lightAccentColor;
     padding: 20px;
     margin: 0;
     box-shadow: 0 -5px 10px 10px #CCC;
 
     h2 {
+        color: #000;
         margin-top: 0;
     }
 }
 
 .item-list {
-    width: 100%;
     padding: 20px 0;
     margin: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
 
     ul {
         list-style-type: none;
@@ -41,7 +36,7 @@ html, body {
             padding: 10px 22px;
 
             &:nth-child(even) {
-                background-color: #EEE;
+                background-color: lightAccentColor;
             }
         }
 

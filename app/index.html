@@ -12,7 +12,10 @@
 
     <div class="new-item" ng-controller="NewItemController">
         <h2>Add New Item</h2>
-        <input ng-model="model.newItemName" enter-pressed="action.addNewItem()" />
+        <form ng-submit="action.addNewItem()">
+            <input ng-model="model.newItemName" />
+            <button type="submit">Add</button>
+        </form>
     </div>
 
     <div class="item-list" ng-controller="ItemListController">
@@ -28,7 +31,6 @@
     <!-- Project Scripts -->
     <script src="js/app.js"></script>
 
-    <script src="js/directives/enterPressed.js"></script>
     <script src="js/controllers/newItem.js"></script>
     <script src="js/controllers/itemList.js"></script>
 

@@ -20,16 +20,13 @@ module.exports = function (grunt) {
             dev: '<%= ng.temp %>'
         },
 
-        // process compass
-        compass: {
-            options: {
-                sassDir: '<%= ng.app %>/scss',
-                cssDir: '<%= ng.app %>/css',
-                noLineComments: false
-            },
-            dev: {
+        stylus: {
+            compile: {
                 options: {
-                    debugInfo: true
+                    paths: ['<%= ng.app %>/styl']
+                },
+                files: {
+                    '<%= ng.app %>/css/main.css': '<%= ng.app %>/styl/*.styl'
                 }
             }
         },
@@ -69,9 +66,9 @@ module.exports = function (grunt) {
             },
 
             // compile CSS when Sass files are changed
-            compass: {
-                files: ['<%= ng.app %>/**/*.{scss,sass}'],
-                tasks: ['compass:dev']
+            stylus: {
+                files: ['<%= ng.app %>/**/*.styl'],
+                tasks: ['stylus']
             }
         }
     });
