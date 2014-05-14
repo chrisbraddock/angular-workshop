@@ -1,5 +1,8 @@
-lightAccentColor = #CCDDEF;
-darkTextColor = #555555;
+
+accentColor = #9db8e1;
+lightAccentColor = accentColor + 80%;
+darkTextColor = #777;
+lightTextColor = #FFF;
 
 html, body {
     padding: 0;
@@ -12,13 +15,13 @@ html, body {
 }
 
 .new-item {
-    background-color: lightAccentColor;
+    background-color: accentColor;
     padding: 20px;
     margin: 0;
     box-shadow: 0 -5px 10px 10px #CCC;
 
     h2 {
-        color: #000;
+        color: lightTextColor;
         margin-top: 0;
     }
 }
@@ -34,9 +37,14 @@ html, body {
         li {
             font-size: 18px;
             padding: 10px 22px;
+            border-top: 1px solid accentColor;
 
             &:nth-child(even) {
                 background-color: lightAccentColor;
+            }
+
+            &:first-child {
+                border-width: 0;
             }
         }
 

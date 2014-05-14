@@ -6,7 +6,9 @@ angular.module('EL').controller('ItemListController', function ($scope) {
     $scope.model = {
         itemList: [
             'item 1',
-            'item 2'
+            'item 2',
+            'item 3',
+            'item 4'
         ]
     };
 
