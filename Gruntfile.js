@@ -25,8 +25,21 @@ module.exports = function (grunt) {
                     paths: ['<%= ng.app %>/styl']
                 },
                 files: {
-                    '<%= ng.app %>/css/main.css': '<%= ng.app %>/styl/*.styl'
+                    '<%= ng.temp %>/stylus.css': '<%= ng.app %>/styl/*.styl'
                 }
+            }
+        },
+
+        autoprefixer: {
+
+            options: {
+              // Task-specific options go here.
+            },
+
+            // prefix the specified file
+            main: {
+                src: '<%= ng.temp %>/stylus.css',
+                dest: '<%= ng.app %>/css/main.css'
             }
         },
 
@@ -59,7 +72,7 @@ module.exports = function (grunt) {
             livereload: {
                 files: [
                     '<%= ng.app %>/**/*.html',
-                    '<%= ng.app %>/**/*.css',
+                    '<%= ng.app %>/css/main.css',
                     '<%= ng.app %>/**/*.js'
                 ]
             },
@@ -67,7 +80,7 @@ module.exports = function (grunt) {
             // compile CSS when Sass files are changed
             stylus: {
                 files: ['<%= ng.app %>/**/*.styl'],
-                tasks: ['stylus']
+                tasks: ['stylus', 'autoprefixer', 'clean:dev']
             }
         }
     });
