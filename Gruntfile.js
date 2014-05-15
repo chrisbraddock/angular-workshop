@@ -22,6 +22,8 @@ module.exports = function (grunt) {
         stylus: {
             compile: {
                 options: {
+                    compress: false,
+                    linenos: true,
                     paths: ['<%= ng.app %>/styl']
                 },
                 files: {
@@ -33,7 +35,8 @@ module.exports = function (grunt) {
         autoprefixer: {
 
             options: {
-              // Task-specific options go here.
+                // Task-specific options go here.
+                browsers: ['last 2 version', 'ie 8', 'ie 9']
             },
 
             // prefix the specified file
