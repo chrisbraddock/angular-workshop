@@ -3,6 +3,7 @@ accentColor = #9db8e1;
 xLightAccentColor = accentColor + 90%;
 lightAccentColor = accentColor + 65%;
 darkTextColor = #777;
+disabledTextColor = #CCC;
 lightTextColor = #FFF;
 
 html, body {
@@ -53,6 +54,12 @@ html, body {
             &:hover {
                 color: #FFF;
                 background-color: accentColor;
+            }
+
+            &.done {
+                text-decoration: line-through;
+                color: disabledTextColor;
+                background-color: disabledTextColor + 70%;
             }
         }
     }
