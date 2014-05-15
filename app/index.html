@@ -14,13 +14,19 @@
         <h2>Add New Item</h2>
         <form ng-submit="action.addNewItem()">
             <input ng-model="model.newItemName" />
-            <button type="submit">Add</button>
+            <button type="submit" class="expander">Add</button>
         </form>
     </div>
 
     <div class="item-list" ng-controller="ItemListController">
         <ul>
-            <li ng-repeat="item in model.itemList">{{ item }}</li>
+            <li
+                ng-repeat="item in model.itemList"
+                ng-class="{done: item.done}"
+                ng-click="action.toggle($index)"
+            >
+                {{ item.task }} <span class="expander">({{ item.tags[0] }})</span>
+            </li>
         </ul>
     </div>
 

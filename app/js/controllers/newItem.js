@@ -10,7 +10,11 @@ angular.module('EL').controller('NewItemController', function ($scope) {
     // actions
     $scope.action = {
         addNewItem: function () {
-            alert('adding new item: ' + $scope.model.newItemName);
+            $scope.$emit('newItem', {
+                task: $scope.model.newItemName,
+                done: false,
+                tags: []
+            });
             $scope.model.newItemName = '';
         }
     };
