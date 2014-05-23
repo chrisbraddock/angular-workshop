@@ -19,10 +19,10 @@ Once you have cloned the repo and have those 2 dependencies installed, simply ru
 Then you can run `grunt dev` to start the development environment.
 
 ## Agenda
-1. Wire up newItem to itemList
-2. Change list to use an array of objects
-3. Use object properties to drive style
-4. Allow user to mark item as done
-5. Load initial data list from JSON file
+X1. Wire up newItem to itemList
+X2. Change list to use an array of objects
+X3. Use object properties to drive style
+X4. Allow user to mark item as done
+X5. Load initial data list from JSON file
 6. Save state to localStorage after initial load
 7. Show more text when hovering over item (using controller/directive)

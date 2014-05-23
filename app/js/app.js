@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('EL', [
+var app = angular.module('EL', [
     'ngRoute'
 ]).config(function () {
-    
+
 });

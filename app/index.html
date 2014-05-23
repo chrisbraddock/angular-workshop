@@ -20,21 +20,26 @@
 
     <div class="item-list" ng-controller="ItemListController">
         <ul>
-            <li ng-repeat="item in model.itemList">{{ item }}</li>
+            <li ng-repeat="item in model.itemList"
+                ng-class="{ done:item.done }">
+                {{ item.task }}
+                <input type="checkbox" ng-model="item.done" />
+            </li>
         </ul>
     </div>
 
     <!-- #### Vendor Scripts #### -->
     <script src="js/vendor/angular.js"></script>
     <script src="js/vendor/angular-route.js"></script>
+    <script src="js/vendor/angular-local-storage.js"></script>
 
     <!-- #### Project Scripts #### -->
     <script src="js/app.js"></script>
-    
+
         <!-- Controllers -->
         <script src="js/controllers/newItem.js"></script>
         <script src="js/controllers/itemList.js"></script>
-        
+
         <!-- Factories -->
         <script src="js/factories/listData.js"></script>
 
