@@ -1,64 +1,32 @@
 'use strict';
 
-angular.module('EL', ['LocalStorageModule'])
-.controller('ItemListController', [
+app.controller('ItemListController', [
     '$scope',
+    '$rootScope',
     '$http',
-    'localStorageService',
-    function ($scope, $http/*, localStorageService*/) {
-//debugger;
+    'Data',
+    function ($scope, $rootScope, $http, Data) {
+
+        // init to existing tasks from DB
         $scope.model = {
-            itemList: []
+            tasks: Data.get('tasks')
         };
 
-        // get items from persistence mechanism
-        $http.get('endpoint/list.json').
-        success(function (data) {
-            app.itemList = data;
-            //localStorageService.clearAll();
-            //localStorageService.set('tasks', app.itemList);
-            $scope.model.itemList = app.itemList;
-        })
-        .error(function (e) {
-            debugger;
+        // when tasks are created, update our view model
+        $rootScope.$on('task:created', function (task) {
+            $scope.model.tasks = Data.get('tasks');
         });
 
-        // actions
+        // when tasks change at all, persist them to DB
+        $scope.$watch('model.tasks', function (tasks) {
+            Data.set('tasks', tasks);
+        }, true);
+
         $scope.action = {
-            addItem: function (item) {
-                $scope.itemList.push(item);
-            },
-            doneItem: function (item) {
-                item.done = true;
+            displayMore: function (e) {
+                console.log('hovered over: ' + e.getAttribute('data-value'));
             }
         };
 
     }
 ]);
-
-/*
-'use strict';
-
-angular.module('EL').controller('ItemListController', function ($scope) {
-
-    // TODO get from persistence mechanism
-    app.itemList = [
-        'item 1',
-        'item 2',
-        'item 3',
-        'item 4'
-    ];
-
-    $scope.model = {
-        itemList: app.itemList
-    };
-
-    // actions
-    $scope.action = {
-        addItem: function (item) {
-            $scope.itemList.push(item);
-        }
-    };
-
-});
- */

@@ -20,10 +20,13 @@
 
     <div class="item-list" ng-controller="ItemListController">
         <ul>
-            <li ng-repeat="item in model.itemList"
-                ng-class="{ done:item.done }">
-                {{ item.task }}
-                <input type="checkbox" ng-model="item.done" />
+            <li ng-repeat="task in model.tasks"
+                ng-class="{ done:task.done }"
+                ng-mouseenter="action.displayMore($event.target)"
+                data-value="{{ task.name }}"
+                >
+                {{ task.name }}
+                <input type="checkbox" ng-model="task.done" />
             </li>
         </ul>
     </div>
@@ -36,15 +39,15 @@
     <!-- #### Project Scripts #### -->
     <script src="js/app.js"></script>
 
-        <!-- Controllers -->
-        <script src="js/controllers/newItem.js"></script>
-        <script src="js/controllers/itemList.js"></script>
+    <!-- Controllers -->
+    <script src="js/controllers/newItem.js"></script>
+    <script src="js/controllers/itemList.js"></script>
 
-        <!-- Factories -->
-        <script src="js/factories/listData.js"></script>
+    <!-- Factories -->
+    <script src="js/factories/listData.js"></script>
 
-        <!-- Directives -->
-        <script src="js/directives/expander.js"></script>
+    <!-- Directives -->
+    <script src="js/directives/expander.js"></script>
 
 </body>
 </html>

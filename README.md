@@ -24,5 +24,5 @@ X2. Change list to use an array of objects
 X3. Use object properties to drive style
 X4. Allow user to mark item as done
 X5. Load initial data list from JSON file
-6. Save state to localStorage after initial load
-7. Show more text when hovering over item (using controller/directive)
+X6. Save state to localStorage after initial load
+X7. Show more text when hovering over item (using controller/directive)
