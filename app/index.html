@@ -10,25 +10,29 @@
 </head>
 <body ng-app="EL">
 
-    <div class="new-item" ng-controller="NewItemController">
-        <h2>Add New Item</h2>
-        <form ng-submit="action.addNewItem()">
-            <input ng-model="model.newItemName" />
-            <button type="submit">Add</button>
-        </form>
-    </div>
+    <div class="item-list-container" ng-controller="ItemListController">
 
-    <div class="item-list" ng-controller="ItemListController">
-        <ul>
-            <li ng-repeat="task in model.tasks"
-                ng-class="{ done:task.done }"
-                ng-mouseenter="action.displayMore($event.target)"
-                data-value="{{ task.name }}"
-                >
-                {{ task.name }}
-                <input type="checkbox" ng-model="task.done" />
-            </li>
-        </ul>
+        <div class="new-item">
+            <h2>Add New Item</h2>
+            <form ng-submit="action.addNewItem()">
+                <input ng-model="model.newItemName" />
+                <button type="submit">Add</button>
+            </form>
+        </div>
+
+        <div class="item-list">
+            <ul>
+                <li ng-repeat="item in model.items"
+                    ng-class="{ done:item.done }"
+                    ng-mouseenter="action.displayMore($event.target)"
+                    data-value="{{ item.name }}"
+                    >
+                    {{ item.name }}
+                    <input type="checkbox" ng-model="item.done" />
+                </li>
+            </ul>
+        </div>
+
     </div>
 
     <!-- #### Vendor Scripts #### -->
