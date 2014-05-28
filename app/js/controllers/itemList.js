@@ -35,4 +35,9 @@ app.controller('ItemListController', [
         };
 
     }
-]);
+])
+.directive('awItemList', function () {
+    return {
+        templateUrl: 'templates/item-list.html'
+    };
+});
